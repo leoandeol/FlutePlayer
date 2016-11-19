@@ -15,15 +15,24 @@ var game_speed
 func _ready():
 	set_process(true)
 	set_process_input(true)
-	bg_para = get_child("bg")
-	fg_para = get_child("fg")
-	aft_fir = get_child("front")
-	aft_sec = get_child("middle")
-	aft_thi = get_child("back")
 	game_speed = 1
 
 func _process(delta):
-	pass
+	var mov = delta * 150
+	
+	bg_para = get_node("bg")
+	fg_para = get_node("fg")
+	aft_fir = get_node("front")
+	aft_sec = get_node("middle")
+	aft_thi = get_node("back")
+	bg_para.update_bg_para(mov)
+	for i in [aft_thi, aft_sec, aft_fir]:
+		var pos = i.get_pos()
+		pos.x += mov
+		if(pos.x>(1280)):
+			pos.x = 0
+		i.set_pos(pos)
+	fg_para.update_fg_para(mov)
 	
 
 func _input(event):
