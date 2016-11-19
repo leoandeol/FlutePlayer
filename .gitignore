@@ -1,2 +1,6 @@
 *~
 \#*\#
+data/
+*.keystore
+debug.keystore
+export.cfg

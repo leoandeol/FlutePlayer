@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://game/sprites/child1.png" type="Texture" id=1]
+[ext_resource path="res://game/child.gd" type="Script" id=2]
+
+[node name="child" type="Sprite"]
+
+texture = ExtResource( 1 )
+centered = false
+vframes = 4
+hframes = 25
+region_rect = Rect2( 0, 0, 1030, 111 )
+script/script = ExtResource( 2 )
+
+
