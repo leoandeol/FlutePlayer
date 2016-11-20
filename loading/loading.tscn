@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=1]
+
+[ext_resource path="res://loading/loading.gd" type="Script" id=1]
+[ext_resource path="res://loading/background.png" type="Texture" id=2]
+[ext_resource path="res://loading/LoadingFrame.png" type="Texture" id=3]
+[ext_resource path="res://loading/LoadingBar.png" type="Texture" id=4]
+[ext_resource path="res://loading/loading_bar.gd" type="Script" id=5]
+[ext_resource path="res://game/sprites/player.png" type="Texture" id=6]
+[ext_resource path="res://game/player.gd" type="Script" id=7]
+
+[node name="origin" type="Node2D"]
+
+script/script = ExtResource( 1 )
+
+[node name="background" type="Sprite" parent="."]
+
+transform/pos = Vector2( 640, 360 )
+texture = ExtResource( 2 )
+
+[node name="frame" type="Sprite" parent="."]
+
+transform/pos = Vector2( 640, 600 )
+z/z = 2
+texture = ExtResource( 3 )
+
+[node name="bar" type="Sprite" parent="."]
+
+transform/pos = Vector2( 640, 600 )
+z/z = 1
+texture = ExtResource( 4 )
+script/script = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+transform/pos = Vector2( 640, 200 )
+texture = ExtResource( 6 )
+hframes = 11
+script/script = ExtResource( 7 )
+
+
